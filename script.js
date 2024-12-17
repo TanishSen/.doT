@@ -116,9 +116,13 @@ typingForm.addEventListener("submit", (e) => {
 
 const subtitles = [
   "Talk, Explore, and Learn a Lot, Say Hello to Your Friend, .doT!",
-  "Connect with your passions and engage in meaningful conversations.",
-  "Discover new ideas and explore fascinating topics every day.",
-  "Your intelligent assistant for fun and learning, all in one place.",
+  "The Smarter Shot for Every Thought—It’s .doT!",
+  "Need a Thought? Just Ask .doT!",
+  "On the Spot, Here’s .doT!",
+  "From Big Ideas to Little Thoughts",
+  "I’ve Got You Covered, I’m .doT!",
+  "Quick Solutions, Fast as a Shot",
+  "Meet Your Genius Buddy, .doT!",
 ];
 
 const subtitleElement = document.querySelector(".subtitle");
@@ -132,7 +136,7 @@ function typeSubtitle() {
   if (charIndex > currentSubtitle.length) {
     setTimeout(() => {
       eraseSubtitle();
-    }, 2000);
+    }, 5000);
   } else {
     setTimeout(typeSubtitle, 100);
   }
