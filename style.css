@@ -36,7 +36,7 @@ body {
   margin-top: 7vh;
   padding: 1rem;
   /*header removed */
-  display: none;
+  /* display: none; */
 }
 
 .header .title {
