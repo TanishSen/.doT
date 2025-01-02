@@ -8,13 +8,12 @@
 }
 
 :root {
-  /* Dark black */
   --text-color: #e3e3e3;
   --subheading-color: #828282;
   --placeholder-color: #a6a6a6;
-  --primary-color: #242424;
-  --secondary-color: #383838;
-  --secondary-hover-color: #444;
+  --primary-color: #0a0a0a; /* Pitch Black */
+  --secondary-color: #121212; /* Dark Gray */
+  --secondary-hover-color: #1f1f1f; /* Slightly Lighter Gray */
 }
 
 body {
@@ -191,12 +190,17 @@ body {
 
 .chat-list .message .incoming {
   margin-top: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .chat-list {
   padding: 2rem 1rem 12rem;
   max-height: 100vh;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align the messages */
+  gap: 1rem; /* Add space between messages */
 }
 
 .header .chat-list .message .typing-form {
@@ -250,4 +254,12 @@ body {
 
 .chat-list {
   margin: 0 auto;
+}
+
+.message {
+  width: 100%;
+  max-width: 1000px; /* Set a consistent width for messages */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align individual messages */
 }
