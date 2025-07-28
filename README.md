@@ -1,6 +1,6 @@
 # .doT - AI Chatbot
 
-A secure AI chatbot application using Google's Gemini API with a proper backend setup to protect API keys.
+A secure AI chatbot application using Google's Gemini API.
 
 ## Features
 
