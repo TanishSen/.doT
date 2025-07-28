@@ -2,8 +2,8 @@ const typingForm = document.querySelector(".typing-form");
 const chatList = document.querySelector(".chat-list");
 let userMessage = null;
 
-const API_KEY = "AIzaSyAvebVOMd_X0v9cZx4xvIbJ-OxpuQpS1Mk";
-const API_URI = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+// Use local backend endpoint for secure API calls
+const API_URI = '/api/chat';
 
 const createMessageElement = (content, ...classes) => {
   const div = document.createElement("div");
@@ -20,16 +20,7 @@ const generateAPIResponse = async () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        contents: [
-          {
-            parts: [{ text: userMessage }],
-          },
-        ],
-        generationConfig: {
-          maxOutputTokens: 300,
-          temperature: 0.7,
-          topP: 1.0,
-        },
+        message: userMessage
       }),
     });
 
@@ -38,8 +29,7 @@ const generateAPIResponse = async () => {
     }
 
     const data = await response.json();
-    const aiResponse =
-      data.candidates[0]?.content?.parts[0]?.text || "No response";
+    const aiResponse = data.response || "No response";
 
     const loadingMessage = chatList.querySelector(".loading");
     if (loadingMessage) {
